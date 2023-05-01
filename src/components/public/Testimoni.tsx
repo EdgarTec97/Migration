@@ -4,7 +4,6 @@ import React, { useState } from "react";
 // import react slick
 import Slider from "react-slick";
 import Image from "next/image";
-import Stars from "public/assets/Icon/stars.svg";
 
 const Testimoni = ({
   listTestimoni = [
@@ -111,7 +110,11 @@ const Testimoni = ({
                 <div className="flex flex-none items-center ml-auto order-1 xl:order-2">
                   <p className="text-sm">{listTestimonis.rating}</p>
                   <span className="flex ml-4">
-                    <Stars className="h-4 w-4" />
+                    <img
+                      src="assets/Icon/stars.svg"
+                      alt=""
+                      className="h-4 w-4"
+                    />
                   </span>
                 </div>
               </div>
