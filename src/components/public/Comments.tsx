@@ -2,16 +2,18 @@
 export default function Comments() {
   return (
     <div
-      className="bg-gradient-to-b from-white-300 to-white-500 w-full py-14 pt-44"
+      className="bg-gradient-to-b from-white-300 to-white-500 w-full py-14 pt-14"
       id="comments"
     >
       <div className="max-w-screen-xl  px-6 sm:px-8 lg:px-16 mx-auto flex flex-col w-full text-center justify-center">
         <div className="shadow-lg rounded-lg p-4">
           <div className="mb-4">
-            <h2 className="text-xl font-bold">Comments</h2>
+            <h2 className="text-2xl sm:text-3xl lg:text-5xl font-medium text-black-600 leading-normal w-9/12 sm: lg:w-8/12 mx-auto">
+              Comments
+            </h2>
           </div>
           <div className="divide-y divide-gray-200">
-            <div className="flex items-start py-4">
+            <div className="flex items-start pt-4">
               <img
                 className="w-12 h-12 rounded-full mr-4"
                 src="/assets/anonym.jpeg"

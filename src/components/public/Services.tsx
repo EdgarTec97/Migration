@@ -169,95 +169,123 @@ export default function Services() {
           <ScrollAnimationWrapper>
             <motion.h3
               variants={scrollAnimation}
-              className="text-2xl sm:text-3xl lg:text-4xl font-medium text-black-600 leading-relaxed w-9/12 sm:w-6/12 lg:w-4/12 mx-auto"
+              className="text-2xl sm:text-3xl lg:text-4xl font-medium text-black-600 leading-relaxed w-9/12 sm:w-6/12 lg:w-8/12 mx-auto"
             >
-              Huge Global Network of Fast VPN{" "}
+              Oficinas del INM en Ciudad Victoria - Direcciones, Teléfonos y
+              Horarios de Atención.{" "}
             </motion.h3>
             <motion.p
               className="leading-normal  mx-auto my-2 w-10/12 sm:w-7/12 lg:w-6/12"
               variants={scrollAnimation}
             >
-              See LaslesVPN everywhere to make it easier for you when you move
-              locations.
+              1 Oficina de Representación Local del INM Ciudad Victoria.
             </motion.p>
           </ScrollAnimationWrapper>
           <ScrollAnimationWrapper>
             <motion.div
-              className="py-12 w-full px-8 mt-16"
+              className="py-12 w-full px-8 mt-8"
               variants={scrollAnimation}
             >
-              <img
-                src="assets/HugeGlobal.svg"
-                alt=""
-                className="w-full h-auto"
-              />
-            </motion.div>
-          </ScrollAnimationWrapper>
-          <ScrollAnimationWrapper>
-            <motion.div
-              className="w-full flex justify-evenly items-center mt-4 flex-wrap lg:flex-nowrap"
-              variants={scrollAnimation}
-            >
-              {/* <Netflix className="h-18 w-auto" /> */}
-              <img
-                src="/assets/Icon/amazon.png"
-                className="h-14 w-auto mt-4 lg:mt-2"
-                alt=""
-              />
-              <img
-                src="/assets/Icon/netflix.png"
-                className="h-14 w-auto mt-2 lg:mt-0"
-                alt=""
-              />
-              <img
-                src="/assets/Icon/reddit.png"
-                className="h-12 w-auto mt-2 lg:mt-0"
-                alt=""
-              />
-              <img
-                src="/assets/Icon/discord.png"
-                className="h-14 w-auto mt-2 lg:mt-0"
-                alt=""
-              />
-              <img
-                src="/assets/Icon/spotify.png"
-                className="h-12 w-auto mt-2 lg:mt-0"
-                alt=""
-              />
+              <div className="flex flex-col h-96 sm:flex-row shadow-lg rounded-lg p-4">
+                <div className="w-full sm:w-1/3 bg-gray-100 flex items-center justify-center px-4 py-8">
+                  <div>
+                    <h2 className="text-2xl font-bold mb-4">
+                      Información de la oficina
+                    </h2>
+                    <p className="mb-4">
+                      Oficina de Representación Local del INM Ciudad Victoria
+                    </p>
+                    <p className="mb-4">
+                      <strong>Dirección:</strong> 7 y 8 Morelos Piso 4, Palacio
+                      Federal, Sector Centro, C.P. 87000, Cd. Victoria,
+                      Tamaulipas.
+                    </p>
+                    <p className="mb-4">
+                      <strong>Horario de Atención:</strong> De Lunes a Viernes
+                      de 09:00 a 15:00 horas.
+                    </p>
+                    <p>
+                      <strong>Teléfono:</strong> 8343154894
+                    </p>
+                  </div>
+                </div>
+                <div className="w-full sm:w-2/3 relative">
+                  <iframe
+                    src="https://maps.google.com/maps?width=100%25&amp;height=100%&amp;hl=es&amp;q=Oficina de Representacion Local del INM Ciudad Victoria+Ciudad Victoria+Tamaulipas+MEXICO&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+                    data-src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=es&amp;q=Oficina de Representacion Local del INM Ciudad Victoria+Ciudad Victoria+Tamaulipas+MEXICO&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+                    frameBorder="0"
+                    allowFullScreen
+                    className="h-80 sm:h-full w-full"
+                  ></iframe>
+                </div>
+              </div>
             </motion.div>
           </ScrollAnimationWrapper>
         </div>
-        <div className="flex flex-col w-full my-16" id="testimoni">
+        <div className="flex flex-col w-full my-4" id="testimoni">
           <ScrollAnimationWrapper>
             <motion.h3
               variants={scrollAnimation}
-              className="text-2xl sm:text-3xl lg:text-4xl font-medium text-black-600 leading-normal w-9/12 sm: lg:w-4/12 mx-auto"
+              className="text-2xl sm:text-3xl lg:text-5xl font-medium text-black-600 leading-normal w-9/12 sm: lg:w-8/12 mx-auto"
             >
-              Trusted by Thousands of Happy Customer{" "}
+              Disponibilidad y atención ciudadana 24 horas.{" "}
             </motion.h3>
             <motion.p
               variants={scrollAnimation}
-              className="leading-normal mx-auto mb-2 mt-4 w-10/12 sm:w-7/12 lg:w-6/12"
+              className="leading-normal mx-auto mb-2 mt-4 w-10/12 sm:w-7/12 lg:w-8/12"
             >
-              These are the stories of our customers who have joined us with
-              great pleasure when using this crazy feature.
+              Si necesitas acudir a la Oficina de{" "}
+              <strong>
+                Representación del Instituto Nacional de Migración en Ciudad
+                Victoria
+              </strong>{" "}
+              (Tamaulipas) para solicitar apoyo especializado para la
+              realización o para el ingreso de la solicitud con todos los
+              requisitos y documentos del trámite migratorio que precisas, aquí
+              te brindamos toda la información con su ubicación y formas de
+              contacto. Todos los trámites tienen que ser ingresados de manera
+              presencial en la delegación del INM de Ciudad Victoria.
             </motion.p>
           </ScrollAnimationWrapper>
-          <ScrollAnimationWrapper className="relative w-full mt-16">
+          <ScrollAnimationWrapper className="relative w-full mt-12 overflow-scroll">
             <motion.div variants={scrollAnimation} custom={{ duration: 3 }}>
-              <div className="absolute rounded-xl  py-8 sm:py-14 px-6 sm:px-12 lg:px-16 w-full flex flex-col sm:flex-row justify-between items-center z-10 bg-white-500">
-                <div className="flex flex-col text-left w-10/12 sm:w-7/12 lg:w-5/12 mb-6 sm:mb-0">
-                  <h5 className="text-black-600 text-xl sm:text-2xl lg:text-3xl leading-relaxed font-medium">
-                    Subscribe Now for <br /> Get Special Features!
-                  </h5>
-                  <p>Let`s subscribe with us and find the fun.</p>
-                </div>
-                <ButtonPrimary>Get Started</ButtonPrimary>
-              </div>
-              <div
-                className="absolute bg-black-600 opacity-5 w-11/12 roudned-lg h-60 sm:h-56 top-0 mt-8 mx-auto left-0 right-0"
-                style={{ filter: "blur(114px)" }}
-              ></div>
+              <table className="min-w-full divide-y divide-gray-200 text-left">
+                <thead className="bg-gray-50">
+                  <tr>
+                    <th
+                      scope="col"
+                      className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                    >
+                      Oficina
+                    </th>
+                    <th
+                      scope="col"
+                      className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                    >
+                      Dirección
+                    </th>
+                    <th
+                      scope="col"
+                      className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                    >
+                      Teléfono
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="bg-white divide-y divide-gray-200">
+                  <tr>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                      Sede INM Ciudad Victoria
+                    </td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 font-medium">
+                      7 y 8 Morelos Piso 4
+                    </td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 font-medium">
+                      8343154894
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </motion.div>
           </ScrollAnimationWrapper>
         </div>
