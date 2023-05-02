@@ -1,14 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
 import React, { useMemo } from "react";
 import Image from "next/image";
-import Testimoni from "@/components/public/Testimoni";
 import ButtonPrimary from "@/components/public/misc/ButtonPrimary";
 import ButtonOutline from "@/components/public/misc/ButtonOutline";
 import { motion } from "framer-motion";
 import getScrollAnimation from "utils/getScrollAnimation";
 import ScrollAnimationWrapper from "@/components/public/Layout/ScrollAnimationWrapper";
 
-const Pricing = () => {
+export default function Pricing() {
   const scrollAnimation = useMemo(() => getScrollAnimation(), []);
 
   return (
@@ -256,11 +255,6 @@ const Pricing = () => {
               great pleasure when using this crazy feature.
             </motion.p>
           </ScrollAnimationWrapper>
-          <ScrollAnimationWrapper className="w-full flex flex-col py-12">
-            <motion.div variants={scrollAnimation}>
-              <Testimoni />
-            </motion.div>
-          </ScrollAnimationWrapper>
           <ScrollAnimationWrapper className="relative w-full mt-16">
             <motion.div variants={scrollAnimation} custom={{ duration: 3 }}>
               <div className="absolute rounded-xl  py-8 sm:py-14 px-6 sm:px-12 lg:px-16 w-full flex flex-col sm:flex-row justify-between items-center z-10 bg-white-500">
@@ -282,6 +276,4 @@ const Pricing = () => {
       </div>
     </div>
   );
-};
-
-export default Pricing;
+}

@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="row-span-2 sm:col-span-4 col-start-1 col-end-4 sm:col-end-5 flex flex-col items-start ">
           <img src="/assets/Logo.svg" alt="" className="h-8 w-auto mb-6" />
           <p className="mb-4">
-            <strong className="font-medium">LaslesVPN</strong> is a private
+            <strong className="font-medium">Migración</strong> is a private
             virtual network that has unique features and has high security.
           </p>
           <div className="flex w-full mt-2 mb-8 -mx-2">

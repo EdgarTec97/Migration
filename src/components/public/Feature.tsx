@@ -40,8 +40,20 @@ const Feature = () => {
               We Provide Many Features You Can Use
             </h3>
             <p className="my-2 text-black-500">
-              You can explore the features that we provide with fun and have
-              their own functions each feature.
+              El Departamento de Migración del Estado de Tamaulipas es una
+              institución gubernamental encargada de gestionar la entrada y
+              salida de personas en el estado, así como de regularizar la
+              situación migratoria de los extranjeros que residen en la entidad.
+              Sus principales funciones incluyen la expedición de visas y
+              permisos de residencia, el control de la entrada y salida de
+              personas en la entidad, la protección de los derechos de los
+              migrantes y la implementación de programas y políticas que
+              promuevan la integración de los migrantes a la sociedad
+              tamaulipeca. El Departamento de Migración trabaja en coordinación
+              con otras instituciones del gobierno estatal y federal, así como
+              con organizaciones civiles y de la sociedad en general para
+              cumplir con sus objetivos y mejorar la atención a los migrantes en
+              Tamaulipas.
             </p>
             <ul className="text-black-500 self-start list-inside ml-8">
               {features.map((feature, index) => (
