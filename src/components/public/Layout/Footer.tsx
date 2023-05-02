@@ -6,10 +6,10 @@ const Footer = () => {
     <div className="bg-white-300 pt-44 pb-24">
       <div className="max-w-screen-xl w-full mx-auto px-6 sm:px-8 lg:px-16 grid grid-rows-6 sm:grid-rows-1 grid-flow-row sm:grid-flow-col grid-cols-3 sm:grid-cols-12 gap-4">
         <div className="row-span-2 sm:col-span-4 col-start-1 col-end-4 sm:col-end-5 flex flex-col items-start ">
-          <img src="/assets/Logo.svg" alt="" className="h-8 w-auto mb-6" />
+          <img src="/assets/logo-tam.png" alt="" className="h-12 w-auto mb-6" />
           <p className="mb-4">
-            <strong className="font-medium">Migración</strong> is a private
-            virtual network that has unique features and has high security.
+            <strong className="font-medium">INM,</strong> Instituto Nacional de
+            Migración en Ciudad Victoria, Tamaulipas.
           </p>
           <div className="flex w-full mt-2 mb-8 -mx-2">
             <div className="mx-2 bg-white-500 rounded-full items-center justify-center flex p-2 shadow-md">
@@ -22,64 +22,65 @@ const Footer = () => {
               <img src="assets/Icon/instagram.svg" alt="" className="h-6 w-6" />
             </div>
           </div>
-          <p className="text-gray-400">
-            ©{new Date().getFullYear()} - LaslesVPN
-          </p>
+          <p className="text-gray-400">©{new Date().getFullYear()} - INM</p>
         </div>
         <div className=" row-span-2 sm:col-span-2 sm:col-start-7 sm:col-end-9 flex flex-col">
-          <p className="text-black-600 mb-4 font-medium text-lg">Product</p>
+          <p className="text-black-600 mb-4 font-medium text-lg">Servicios</p>
           <ul className="text-black-500 ">
             <li className="my-2 hover:text-orange-500 cursor-pointer transition-all">
-              Download{" "}
+              Tramites{" "}
             </li>
             <li className="my-2 hover:text-orange-500 cursor-pointer transition-all">
-              Pricing{" "}
+              Quejas{" "}
             </li>
             <li className="my-2 hover:text-orange-500 cursor-pointer transition-all">
-              Locations{" "}
+              Demandas{" "}
             </li>
             <li className="my-2 hover:text-orange-500 cursor-pointer transition-all">
-              Server{" "}
+              Citas{" "}
             </li>
             <li className="my-2 hover:text-orange-500 cursor-pointer transition-all">
-              Countries{" "}
+              Registro{" "}
             </li>
             <li className="my-2 hover:text-orange-500 cursor-pointer transition-all">
-              Blog{" "}
+              Atención{" "}
             </li>
           </ul>
         </div>
         <div className="row-span-2 sm:col-span-2 sm:col-start-9 sm:col-end-11 flex flex-col">
-          <p className="text-black-600 mb-4 font-medium text-lg">Engage</p>
+          <p className="text-black-600 mb-4 font-medium text-lg">Normas</p>
           <ul className="text-black-500">
             <li className="my-2 hover:text-orange-500 cursor-pointer transition-all">
-              LaslesVPN ?{" "}
+              INM ?{" "}
             </li>
             <li className="my-2 hover:text-orange-500 cursor-pointer transition-all">
               FAQ{" "}
             </li>
             <li className="my-2 hover:text-orange-500 cursor-pointer transition-all">
-              Tutorials{" "}
+              Capacitación{" "}
             </li>
             <li className="my-2 hover:text-orange-500 cursor-pointer transition-all">
-              About Us{" "}
+              Nosotros{" "}
             </li>
             <li className="my-2 hover:text-orange-500 cursor-pointer transition-all">
-              Privacy Policy{" "}
+              Políticas de privacidad{" "}
             </li>
             <li className="my-2 hover:text-orange-500 cursor-pointer transition-all">
-              Terms of Service{" "}
+              Términos y condiciónes{" "}
             </li>
           </ul>
         </div>
         <div className="row-span-2 sm:col-span-2 sm:col-start-11 sm:col-end-13 flex flex-col">
-          <p className="text-black-600 mb-4 font-medium text-lg">Earn Money</p>
+          <p className="text-black-600 mb-4 font-medium text-lg">Equipo</p>
           <ul className="text-black-500">
             <li className="my-2 hover:text-orange-500 cursor-pointer transition-all">
-              Affiliate{" "}
+              Informático{" "}
             </li>
             <li className="my-2 hover:text-orange-500 cursor-pointer transition-all">
-              Become Partner{" "}
+              Terceros{" "}
+            </li>
+            <li className="my-2 hover:text-orange-500 cursor-pointer transition-all">
+              Anonimato{" "}
             </li>
           </ul>
         </div>

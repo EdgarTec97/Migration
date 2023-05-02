@@ -1,5 +1,5 @@
 import Feature from "@/components/public/Feature";
-import Pricing from "@/components/public/Pricing";
+import Services from "@/components/public/Services";
 import Hero from "@/components/public/Hero";
 import Layout from "@/components/public/Layout/Layout";
 import SeoHead from "@/components/public/SeoHead";
@@ -12,7 +12,7 @@ export default function Home() {
       <Layout>
         <Hero />
         <Feature />
-        <Pricing />
+        <Services />
         <Comments />
       </Layout>
     </>

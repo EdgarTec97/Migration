@@ -7,13 +7,13 @@ import { motion } from "framer-motion";
 import getScrollAnimation from "utils/getScrollAnimation";
 import ScrollAnimationWrapper from "@/components/public/Layout/ScrollAnimationWrapper";
 
-export default function Pricing() {
+export default function Services() {
   const scrollAnimation = useMemo(() => getScrollAnimation(), []);
 
   return (
     <div
       className="bg-gradient-to-b from-white-300 to-white-500 w-full py-14"
-      id="pricing"
+      id="services"
     >
       <div className="max-w-screen-xl  px-6 sm:px-8 lg:px-16 mx-auto flex flex-col w-full text-center justify-center">
         <div className="flex flex-col w-full">
@@ -22,14 +22,14 @@ export default function Pricing() {
               variants={scrollAnimation}
               className="text-2xl sm:text-3xl lg:text-4xl font-medium text-black-600 leading-relaxed"
             >
-              Choose Your Plan
+              Servicios disponibles
             </motion.h3>
             <motion.p
               variants={scrollAnimation}
               className="leading-normal w-10/12 sm:w-7/12 lg:w-6/12 mx-auto my-2 text-center"
             >
-              Let`s choose the package that is best for you and explore it
-              happily and cheerfully.
+              Elige el servicio que necesites en este momento y con gusto te
+              apoyaremos.
             </motion.p>
           </ScrollAnimationWrapper>
           <div className="grid grid-flow-row sm:grid-flow-col grid-cols-1 sm:grid-cols-3 gap-4 lg:gap-12 py-8 lg:py-12 px-6 sm:px-0 lg:px-6">
@@ -46,34 +46,32 @@ export default function Pricing() {
               >
                 <div className="p-4 lg:p-0 mt-6 lg:mt-16">
                   <Image
-                    src="/assets/Free.png"
+                    src="/assets/citas.png"
                     width={145}
                     height={165}
-                    alt="Free Plan"
+                    alt="Tramites (Citas)"
                   />
                 </div>
                 <p className="text-lg text-black-600 font-medium capitalize my-2 sm:my-7">
-                  Free Plan
+                  Tramites (Citas)
                 </p>
                 <ul className="flex flex-col list-inside pl-6 xl:pl-0 items-start justify-start text-left text-black-500 flex-grow">
                   <li className="relative check custom-list my-2">
-                    Unlimited Bandwitch
+                    Generación de citas
+                  </li>
+                  <li className="relative check custom-list my-2">Anonimato</li>
+                  <li className="relative check custom-list my-2">
+                    Posibilidad de reagendar
                   </li>
                   <li className="relative check custom-list my-2">
-                    Encrypted Connection
-                  </li>
-                  <li className="relative check custom-list my-2">
-                    No Traffic Logs
-                  </li>
-                  <li className="relative check custom-list my-2">
-                    Works on All Devices
+                    Seguimiento y más
                   </li>
                 </ul>
                 <div className="flex flex-col w-full justify-center mb-8 flex-none mt-12">
                   <p className="text-2xl text-black-600 text-center mb-4 ">
-                    Free
+                    Citas
                   </p>
-                  <ButtonOutline>Select</ButtonOutline>
+                  <ButtonOutline>Seleccionar</ButtonOutline>
                 </div>
               </motion.div>
             </ScrollAnimationWrapper>
@@ -90,37 +88,30 @@ export default function Pricing() {
               >
                 <div className="p-4 lg:p-0 mt-6 lg:mt-16">
                   <Image
-                    src="/assets/Standard.png"
+                    src="/assets/legal.png"
                     width={145}
                     height={165}
-                    alt="Standard Plan"
+                    alt="Demandas"
                   />
                 </div>
                 <p className="text-lg text-black-600 font-medium capitalize my-2 sm:my-7">
-                  Standard Plan{" "}
+                  Demandas{" "}
                 </p>
                 <ul className="flex flex-col list-inside pl-6 xl:pl-0 items-start justify-start text-left text-black-500 flex-grow">
+                  <li className="relative check custom-list my-2">Registro</li>
+                  <li className="relative check custom-list my-2">Analisis</li>
                   <li className="relative check custom-list my-2">
-                    Unlimited Bandwitch
+                    Posibilidad de reagendar
                   </li>
                   <li className="relative check custom-list my-2">
-                    Encrypted Connection
-                  </li>
-                  <li className="relative check custom-list my-2">
-                    No Traffic Logs
-                  </li>
-                  <li className="relative check custom-list my-2">
-                    Works on All Devices
-                  </li>
-                  <li className="relative check custom-list my-2">
-                    Connect Anyware{" "}
+                    Seguimiento y más
                   </li>
                 </ul>
                 <div className="flex flex-col w-full justify-center mb-8 flex-none mt-12">
                   <p className="text-2xl text-black-600 text-center mb-4 ">
-                    $9 <span className="text-black-500">/ mo</span>
+                    <span className="text-black-500">Demandas</span>
                   </p>
-                  <ButtonOutline>Select</ButtonOutline>
+                  <ButtonOutline>Seleccionar</ButtonOutline>
                 </div>
               </motion.div>
             </ScrollAnimationWrapper>
@@ -136,42 +127,39 @@ export default function Pricing() {
                 }}
               >
                 <div className="p-4 lg:p-0 mt-6 lg:mt-16">
-                  <Image
-                    src="/assets/Premium.png"
+                  <img
+                    src="/assets/coming.png"
                     width={145}
                     height={165}
-                    alt="Premium Plan"
+                    alt="Próximos servicios"
                   />
                 </div>
                 <p className="text-lg text-black-600 font-medium capitalize my-2 sm:my-7">
-                  Premium Plan{" "}
+                  Próximos servicios{" "}
                 </p>
                 <ul className="flex flex-col list-inside pl-6 xl:pl-0 items-start justify-start text-left text-black-500 flex-grow">
                   <li className="relative check custom-list my-2">
-                    Unlimited Bandwitch
+                    Atención ciudadana
                   </li>
                   <li className="relative check custom-list my-2">
-                    Encrypted Connection
+                    Informes públicos
                   </li>
                   <li className="relative check custom-list my-2">
-                    No Traffic Logs
+                    Monitoreo en tiempo real
                   </li>
                   <li className="relative check custom-list my-2">
-                    Works on All Devices
+                    Mejora continua
                   </li>
                   <li className="relative check custom-list my-2">
-                    Connect Anyware{" "}
-                  </li>
-                  <li className="relative check custom-list my-2">
-                    Get New Features{" "}
+                    Capacitación pública{" "}
                   </li>
                 </ul>
                 <div className="flex flex-col w-full justify-center mb-8 flex-none mt-12">
                   <p className="text-2xl text-black-600 text-center mb-4 ">
-                    $12 <span className="text-black-500">/ mo</span>
+                    <span className="text-black-500">Próximamente</span>
                   </p>
 
-                  <ButtonOutline>Select</ButtonOutline>
+                  <ButtonOutline>Deshabilitado</ButtonOutline>
                 </div>
               </motion.div>
             </ScrollAnimationWrapper>

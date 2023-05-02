@@ -4,13 +4,6 @@ import { motion } from "framer-motion";
 import getScrollAnimation from "utils/getScrollAnimation";
 import ScrollAnimationWrapper from "@/components/public/Layout/ScrollAnimationWrapper";
 
-const features = [
-  "Powerfull online protection.",
-  "Internet without borders.",
-  "Supercharged VPN",
-  "No specific time limits.",
-];
-
 const Feature = () => {
   const scrollAnimation = useMemo(() => getScrollAnimation(), []);
 
@@ -23,7 +16,7 @@ const Feature = () => {
         <ScrollAnimationWrapper className="flex w-full justify-end">
           <motion.div className="h-full w-full p-4" variants={scrollAnimation}>
             <Image
-              src="/assets/Illustration2.png"
+              src="/assets/services.png"
               alt="VPN Illustrasi"
               quality={100}
               height={414}
@@ -37,7 +30,7 @@ const Feature = () => {
             variants={scrollAnimation}
           >
             <h3 className="text-3xl lg:text-4xl font-medium leading-relaxed text-black-600">
-              We Provide Many Features You Can Use
+              Multiples servicios disponibles para cualquier necesidad.
             </h3>
             <p className="my-2 text-black-500">
               El Departamento de Migración del Estado de Tamaulipas es una
@@ -55,24 +48,6 @@ const Feature = () => {
               cumplir con sus objetivos y mejorar la atención a los migrantes en
               Tamaulipas.
             </p>
-            <ul className="text-black-500 self-start list-inside ml-8">
-              {features.map((feature, index) => (
-                <motion.li
-                  className="relative circle-check custom-list"
-                  custom={{ duration: 2 + index }}
-                  variants={scrollAnimation}
-                  key={feature}
-                  whileHover={{
-                    scale: 1.1,
-                    transition: {
-                      duration: 0.2,
-                    },
-                  }}
-                >
-                  {feature}
-                </motion.li>
-              ))}
-            </ul>
           </motion.div>
         </ScrollAnimationWrapper>
       </div>

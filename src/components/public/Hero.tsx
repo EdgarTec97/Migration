@@ -9,23 +9,28 @@ import ScrollAnimationWrapper from "@/components/public/Layout/ScrollAnimationWr
 const Hero = ({
   listUser = [
     {
-      name: "Users",
+      name: "Usuarios",
       number: "390",
       icon: "/assets/Icon/heroicons_sm-user.svg",
     },
     {
-      name: "Locations",
+      name: "Ubicaciones",
       number: "20",
       icon: "/assets/Icon/gridicons_location.svg",
     },
     {
-      name: "Server",
+      name: "Servidores",
       number: "50",
       icon: "/assets/Icon/bx_bxs-server.svg",
     },
   ],
 }) => {
   const scrollAnimation = useMemo(() => getScrollAnimation(), []);
+
+  const goFeature = () => {
+    const element = document.getElementById("feature");
+    element?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <div className="max-w-screen-xl mt-24 px-8 xl:px-16 mx-auto" id="about">
@@ -49,7 +54,7 @@ const Hero = ({
               trámites tienen que ser ingresados de manera presencial en la
               delegación del INM de Ciudad Victoria.
             </p>
-            <ButtonPrimary>Get Started</ButtonPrimary>
+            <ButtonPrimary onClick={goFeature}>Leer más</ButtonPrimary>
           </div>
           <div className="flex w-full">
             <motion.div className="h-full w-full" variants={scrollAnimation}>
