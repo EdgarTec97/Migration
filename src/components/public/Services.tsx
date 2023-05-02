@@ -186,7 +186,7 @@ export default function Services() {
               className="py-12 w-full px-8 mt-8"
               variants={scrollAnimation}
             >
-              <div className="flex flex-col h-96 sm:flex-row shadow-lg rounded-lg p-4">
+              <div className="flex flex-col sm:flex-row shadow-lg rounded-lg p-4 overflow-scroll">
                 <div className="w-full sm:w-1/3 bg-gray-100 flex items-center justify-center px-4 py-8">
                   <div>
                     <h2 className="text-2xl font-bold mb-4">
@@ -209,7 +209,7 @@ export default function Services() {
                     </p>
                   </div>
                 </div>
-                <div className="w-full sm:w-2/3 relative">
+                <div className="w-full sm:w-2/3">
                   <iframe
                     src="https://maps.google.com/maps?width=100%25&amp;height=100%&amp;hl=es&amp;q=Oficina de Representacion Local del INM Ciudad Victoria+Ciudad Victoria+Tamaulipas+MEXICO&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
                     data-src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=es&amp;q=Oficina de Representacion Local del INM Ciudad Victoria+Ciudad Victoria+Tamaulipas+MEXICO&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
