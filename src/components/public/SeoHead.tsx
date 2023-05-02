@@ -75,6 +75,7 @@ export default function SeoHead(props: any) {
       )}
       {/* Favicons */}
       <link rel="icon" href="/assets/logo.png" />
+      <link href="/assets/public.jpeg" rel="image_src" />
       {/* Windows 8 app icon */}
       <meta name="msapplication-TileColor" content="#F53838" />
       <meta
