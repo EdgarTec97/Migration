@@ -9,7 +9,7 @@ export default function Comments() {
         <div className="shadow-lg rounded-lg p-4">
           <div className="mb-4">
             <h2 className="text-2xl sm:text-3xl lg:text-5xl font-medium text-black-600 leading-normal w-9/12 sm: lg:w-8/12 mx-auto">
-              Comments
+              Comentarios
             </h2>
           </div>
           <div className="divide-y divide-gray-200">
@@ -39,7 +39,7 @@ export default function Comments() {
                 htmlFor="comment"
                 className="block text-gray-700 font-bold mb-2"
               >
-                Left a comment:
+                Escribe un comentario:
               </label>
               <textarea
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
