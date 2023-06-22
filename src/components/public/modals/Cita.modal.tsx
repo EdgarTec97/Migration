@@ -1,10 +1,16 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
+import { useFormik } from "formik";
+import { toast } from "react-toastify";
+import * as Yup from "yup";
 import { AiOutlineUser, AiOutlineMail } from "react-icons/ai";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { HiPencilAlt } from "react-icons/hi";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import axios from "axios";
+
+declare const process: any;
 
 const customStyles = {
   content: {
@@ -52,6 +58,64 @@ export default function CitaModal({
     setEndDate(date);
   };
 
+  const formik = useFormik({
+    initialValues: {
+      name: "",
+      email: "",
+      phoneNumber: "",
+    },
+    validationSchema: Yup.object({
+      email: Yup.string()
+        .email("El formato del email es incorrecto")
+        .required("El email no puede ir vacio"),
+      name: Yup.string().required("El nombre es obligatorio"),
+      phoneNumber: Yup.string().required("El teléfono es obligatorio"),
+    }),
+    onSubmit: async (values, { resetForm }) => {
+      const { name, email, phoneNumber }: any = values;
+
+      if (!startDate || !endDate) {
+        toast.error("El rango de fechas es obligatorio.");
+        return;
+      }
+
+      if (!reason) {
+        toast.error("Indique la razón de la cita.");
+        return;
+      }
+
+      try {
+        let success: boolean = await axios.post(process.env.FORM_API, {
+          status: "pending",
+          name,
+          email,
+          phoneNumber,
+          reason,
+          startDate: startDate!.toISOString(),
+          endDate: endDate!.toISOString(),
+          type: "cita",
+        });
+
+        if (!success) {
+          toast.error("Error inesperado, intente nuevamente.");
+          return;
+        }
+
+        setEndDate(null);
+        setStartDate(null);
+        setReason("");
+
+        toast.success("Cita registrada correctamente.");
+        resetForm();
+        closeModal();
+      } catch (error: any) {
+        toast.error(
+          "Error inesperado, intente nuevamente. código:" + error.toString()
+        );
+      }
+    },
+  });
+
   return (
     <Modal
       isOpen={modalIsOpen}
@@ -64,7 +128,7 @@ export default function CitaModal({
             <h3 className="text-lg leading-6 font-medium text-gray-900 mb-4">
               Generar Cita
             </h3>
-            <form>
+            <form onSubmit={formik.handleSubmit}>
               <div className="mb-4">
                 <label className="sr-only" htmlFor="name">
                   Nombre Completo
@@ -79,8 +143,18 @@ export default function CitaModal({
                     id="name"
                     className="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-10 sm:text-sm border-gray-300 rounded-md"
                     placeholder="Nombre Completo"
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    value={formik.values.name}
                   />
                 </div>
+
+                {formik.touched.name && formik.errors.name ? (
+                  <div className="mt-2 my-1 bg-red-100 border-l-2 border-red-500 text-red-600 p-2 text-sm">
+                    <p className="font-bold">Error</p>
+                    <p className="text-xs">{formik.errors.name}</p>
+                  </div>
+                ) : null}
               </div>
               <div className="mb-4">
                 <label className="sr-only" htmlFor="email">
@@ -96,8 +170,18 @@ export default function CitaModal({
                     id="email"
                     className="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-10 sm:text-sm border-gray-300 rounded-md"
                     placeholder="example@example.com"
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    value={formik.values.email}
                   />
                 </div>
+
+                {formik.touched.email && formik.errors.email ? (
+                  <div className="mt-2 my-1 bg-red-100 border-l-2 border-red-500 text-red-600 p-2 text-sm">
+                    <p className="font-bold">Error</p>
+                    <p className="text-xs">{formik.errors.email}</p>
+                  </div>
+                ) : null}
               </div>
               <div className="mb-4">
                 <label className="sr-only" htmlFor="phoneNumber">
@@ -113,12 +197,22 @@ export default function CitaModal({
                     id="phoneNumber"
                     className="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-10 sm:text-sm border-gray-300 rounded-md"
                     placeholder="000000000000"
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    value={formik.values.phoneNumber}
                   />
                 </div>
+
+                {formik.touched.phoneNumber && formik.errors.phoneNumber ? (
+                  <div className="mt-2 my-1 bg-red-100 border-l-2 border-red-500 text-red-600 p-2 text-sm">
+                    <p className="font-bold">Error</p>
+                    <p className="text-xs">{formik.errors.phoneNumber}</p>
+                  </div>
+                ) : null}
               </div>
               <div className="mb-4">
                 <label className="sr-only" htmlFor="reason">
-                  Motivo
+                  Motivo de la cita
                 </label>
                 <div className="relative rounded-md shadow-sm">
                   <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -132,6 +226,13 @@ export default function CitaModal({
                     className="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-10 sm:text-sm border-gray-300 rounded-md"
                     placeholder="Motivo de la cita"
                   />
+                </div>
+              </div>
+              <div className="flex space-x-4">
+                <div className="w-2/2">
+                  <label className="block text-sm font-medium text-gray-700 mb-6 mt-4">
+                    Seleccione un rango de fechas para asignación de cita.
+                  </label>
                 </div>
               </div>
               <div className="flex space-x-4">
@@ -176,7 +277,7 @@ export default function CitaModal({
                   type="submit"
                   className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                 >
-                  Registrarse
+                  Registrar
                 </button>
               </div>
             </form>
