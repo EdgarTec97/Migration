@@ -5,6 +5,8 @@ import Link from "next/link";
 import { Link as LinkScroll } from "react-scroll";
 import ButtonOutline from "@/components/public/misc/ButtonOutline";
 
+declare const process: any;
+
 const Header = () => {
   const [activeLink, setActiveLink] = useState<null | string>(null);
   const [scrollActive, setScrollActive] = useState(false);
@@ -104,7 +106,8 @@ const Header = () => {
           <div className="flex col-start-10 col-end-12 font-medium justify-end items-center">
             <div>
               <Link
-                href="/"
+                target="_blank"
+                href={process.env.URL}
                 className="hidden md:flex text-black-600 mx-2 sm:mx-4 capitalize tracking-wide hover:text-orange-500 transition-all"
               >
                   Iniciar sesión
@@ -127,7 +130,13 @@ const Header = () => {
                   ></path>
                 </svg>
               </p>
-              <p className="hidden sm:block">Registrate</p>
+              <a
+                className="hidden sm:block"
+                href={`${process.env.URL}/new-account`}
+                target="_blank"
+              >
+                Registrate
+              </a>
             </ButtonOutline>
           </div>
         </nav>

@@ -4,18 +4,10 @@ const { parsed: myEnv } = require("dotenv").config({});
 
 const nextConfig = {
   reactStrictMode: true,
-  images: {
-    unoptimized: true,
-  },
   swcMinify: true,
   webpack(config) {
     config.plugins.push(new webpack.EnvironmentPlugin(myEnv));
     return config;
-  },
-  exportPathMap() {
-    return {
-      "/": { page: "/" },
-    };
   },
 };
 
