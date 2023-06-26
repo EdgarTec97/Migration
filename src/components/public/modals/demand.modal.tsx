@@ -6,9 +6,11 @@ import * as Yup from "yup";
 import { AiOutlineUser, AiOutlineMail } from "react-icons/ai";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { HiPencilAlt } from "react-icons/hi";
+import { GiWorld } from "react-icons/gi";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import axios from "axios";
+import { Countries } from "@/utils/countries";
 
 declare const process: any;
 
@@ -63,6 +65,7 @@ export default function DemandModal({
       name: "",
       email: "",
       phoneNumber: "",
+      country: "México",
     },
     validationSchema: Yup.object({
       email: Yup.string()
@@ -70,9 +73,10 @@ export default function DemandModal({
         .required("El email no puede ir vacio"),
       name: Yup.string().required("El nombre es obligatorio"),
       phoneNumber: Yup.string().required("El teléfono es obligatorio"),
+      country: Yup.string().required("La Nacionalidad es obligatorio"),
     }),
     onSubmit: async (values, { resetForm }) => {
-      const { name, email, phoneNumber }: any = values;
+      const { name, email, phoneNumber, country }: any = values;
 
       if (!startDate || !endDate) {
         toast.error("El rango de fechas es obligatorio.");
@@ -94,6 +98,7 @@ export default function DemandModal({
           startDate: startDate!.toISOString(),
           endDate: endDate!.toISOString(),
           type: "demand",
+          country,
         });
 
         if (!success) {
@@ -210,6 +215,39 @@ export default function DemandModal({
                   </div>
                 ) : null}
               </div>
+
+              <div className="mb-4">
+                <label className="sr-only" htmlFor="country">
+                  Nacionalidad
+                </label>
+                <div className="relative rounded-md shadow-sm">
+                  <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                    <GiWorld className="h-5 w-5 text-gray-400" />
+                  </div>
+                  <select
+                    name="country"
+                    id="country"
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    value={formik.values.country}
+                    className="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-10 sm:text-sm border-gray-300 rounded-md"
+                  >
+                    {Countries.map((nacionalidad) => (
+                      <option key={nacionalidad.id} value={nacionalidad.name}>
+                        {nacionalidad.name}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                {formik.touched.country && formik.errors.country ? (
+                  <div className="mt-2 my-1 bg-red-100 border-l-2 border-red-500 text-red-600 p-2 text-sm">
+                    <p className="font-bold">Error</p>
+                    <p className="text-xs">{formik.errors.country}</p>
+                  </div>
+                ) : null}
+              </div>
+
               <div className="mb-4">
                 <label className="sr-only" htmlFor="reason">
                   Motivo de la demanda
